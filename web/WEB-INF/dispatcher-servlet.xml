@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+<bean class="controller.c1" id="k1"/>
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="home.htm">k1</prop>
+                <prop key="adminlogin.htm">k1</prop>
+                <prop key="dept.htm">k1</prop>
+                <prop key="diag.htm">k1</prop>
+                <prop key="doc.htm">k1</prop>
+                <prop key="opt.htm">k1</prop>
+                <prop key="customer.htm">k1</prop>
+                <prop key="succslogin.htm">k1</prop>
+                <prop key="addappointment.htm">k1</prop>
+                <prop key="editappo.htm">k1</prop>
+                <prop key="updateappo.htm">k1</prop>
+                <prop key="deleteappo.htm">k1</prop>
+                <prop key="adddiag.htm">k1</prop>
+                <prop key="succadddiag.htm">k1</prop>
+                <prop key="editdiag.htm">k1</prop>
+                <prop key="updatediag.htm">k1</prop>
+                <prop key="deletediag.htm">k1</prop>
+                <prop key="userbooking.htm">k1</prop>
+                <prop key="succsbooking.htm">k1</prop>
+                <prop key="succsappobooking.htm">k1</prop>
+                <prop key="succsappo.htm">k1</prop>
+                <prop key="adddept.htm">k1</prop>
+                <prop key="editdept.htm">k1</prop>
+                <prop key="updatedept.htm">k1</prop>
+                <prop key="deletedept.htm">k1</prop>
+                <prop key="succsdept.htm">k1</prop>
+                <prop key="adddoc.htm">k1</prop>
+                <prop key="succsdoc.htm">k1</prop>
+                <prop key="editdoc.htm">k1</prop>
+                <prop key="updatedoc.htm">k1</prop>
+                <prop key="deletedoc.htm">k1</prop>
+                 <prop key="customerappo.htm">k1</prop>
+                 <prop key="diagappo.htm">k1</prop>
+                 <prop key="editdiagappo.htm">k1</prop>
+                 <prop key="updatecustomerdiag.htm">k1</prop>
+                 <prop key="deletediagappo.htm">k1</prop>
+                 <prop key="editcustomerappo.htm">k1</prop>
+                 <prop key="updatecustomerappo.htm">k1</prop>
+                 <prop key="deletecustomerappo.htm">k1</prop>
+                 <prop key="facilities.htm">k1</prop>
+                 <prop key="aboutus.htm">k1</prop>
+                 <prop key="contactus.htm">k1</prop>
+                 <prop key="admindetails.htm">k1</prop>
+                 <prop key="deleteadmin.htm">k1</prop>
+                 <prop key="addadmin.htm">k1</prop>
+                 <prop key="succsadmin.htm">k1</prop>
+                 <prop key="succsaddadmin.htm">k1</prop>
+                 <prop key="userlogin.htm">k1</prop>
+                 <prop key="succsuserlogin.htm">k1</prop>
+                 <prop key="reguser.htm">k1</prop>
+                 <prop key="customerdata.htm">k1</prop>
+                 <prop key="editinfo.htm">k1</prop>
+                 <prop key="updateuinfo.htm">k1</prop>
+                 <prop key="profile.htm">k1</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+
+</beans>

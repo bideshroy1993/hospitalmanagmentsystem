@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 13, 2017 1:44:36 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="model.CustomerAppo" table="CUSTOMER_APPO" schema="HOSPITAL">
+        <id name="mrNo" type="string">
+            <column name="MR_NO" length="4000" />
+            <generator class="assigned" />
+        </id>
+        <property name="customerName" type="string">
+            <column name="CUSTOMER_NAME" length="4000" />
+        </property>
+        <property name="contactNo" type="string">
+            <column name="CONTACT_NO" length="4000" />
+        </property>
+        <property name="day" type="string">
+            <column name="DAY" length="4000" />
+        </property>
+        <property name="time" type="string">
+            <column name="TIME" length="4000" />
+        </property>
+    </class>
+</hibernate-mapping>
